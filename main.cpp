@@ -36,51 +36,51 @@ Sub Object 1: Steering Wheel
     Name 4 things you'll find on the:    Steering Wheel
         1) paddle shifters
         2) 'cruise control' controls
-        3) 
-        4) 
+        3) Volume controls
+        4) car horn
     Name 2 things you can do with the:   Steering Wheel
         1) adjust cruise control settings.
-        2)
+        2) Adjust volume of the car's sound system
         
 Sub Object 2: Instrument Cluster
     Name 4 things you'll find on the:   Instrument Cluster
-        1)
-        2)
-        3)
-        4)
+        1) digital speedometer display
+        2) digital tachometer display
+        3) outside temperature
+        4) automatic transmission display
     Name 3 things you can do with the:   Instrument Cluster
-        1)
-        2)
-        3)
+        1) reset the odometer
+        2) verify the transmission that the car is currently with
+        3) verify the RPM of the engine
     
 Sub Object 3: Environment Controls
     Name 3 things you'll find on the:    Environment Controls
-        1)
-        2)
-        3)
+        1) read the clock time
+        2) the passenger air bag's status
+        3) the transimission current position
     Name 3 things you can do with the:   Environment Controls
-        1)
-        2)
-        3)
+        1) adjust the car's inside temperature
+        2) turn on/off the air conditioning system
+        3) select a new Media input for the car's sound system
 
 Sub Object 4: Infotainment System
     Name 3 things you'll find on the:    Infotainment System
-        1)
-        2)
-        3)
+        1) the current time
+        2) the car's compass
+        3) the music library's media that is currently playing
     Name 3 things you can do with the:   Infotainment System
-        1)
-        2)
-        3)
+        1) select a new media to be played in the car's sound system
+        2) change the infotainment system's configuration
+        3) Play/Pause the currently selected media
 
 Sub Object 5: Seat 
     Name 3 things you'll find on the:    Seat
-        1)
-        2)
-        3)
+        1) headrest
+        2) seat cushion
+        3) lumbar support
     Name 2 things you can do with the:   Seat
-        1)
-        2)
+        1) adjust the seat position forward/backward
+        2) tilt the lumbar support forward/backward
 */
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
