@@ -54,59 +54,59 @@ Thing: Car Wash
  */
 
 /*
-Thing 1)
+Thing 1) Crane
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) cabin for the operator to sit at the top of the machine
+    2) ladder to climb up to the cabin
+    3) horizontal arm to move the trolley
+    4) Counterweight to balance the arm 
+    5) Trolley to place the package in the z-axis 
 3 things it can do:
-    1)
-    2)
-    3)
+    1) pick up a package and move it vertically in the air
+    2) move the package horizontally in the air
+    3) move the horizontal arm veritcally along the tower
  */
 
 /*
-Thing 2)
+Thing 2) Elevator
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) numbers of buttons according to each floor
+    2) alarm button if escalator get stuck between floors
+    3) cable system to hold humans while moving vertically
+    4) recorded voice messages to indicate which floor we are currently in when the doors open
+    5) dispaly digital screen
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Move the car vertically
+    2) Open/Close the car doors after moving the car vertically
+    3) indicate which level we are in after the car stopped moving.
  */
 
 /*
-Thing 3)
+Thing 3) Fishing boat
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) stores fish captured every day
+    2) float on water
+    3) crane for reel back in fishnets into the boat
+    4) "fish hold" to hold the fish inside of the fishnets
+    5) wheelhouse for the captain to navigate the ship
 3 things it can do:
-    1)
-    2)
-    3)
+    1) moves around on the water
+    2) capture fish using fishnets attached to a crane
+    3) stores fishes after every catch 
  */
 
 /*
-Thing 4)
+Thing 4) helicopter
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) main rotor to move the machine vertically
+    2) tail rotor to compensate the torque
+    3) landing gear to help putting the helicopter down
+    4) passenger seats for traveling people to places
+    5) engine transmission to change speed of the motor
 3 things it can do:
-    1)
-    2)
-    3)
+    1) fly vertically while staying in position in midair
+    2) move around horizontally while keeping the same altitude
+    3) transport people from point a to point b
  */
 
 
