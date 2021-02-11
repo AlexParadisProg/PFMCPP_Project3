@@ -56,10 +56,10 @@ Thing: Car Wash
 /*
 Thing 1) Crane
 5 properties:
-    1) stores multiple packages on the trolley
+    1) packages to move stored on the trolley in kilograms
     2) number of seats in the cabin to operate the crane
     3) number of pulleys to hold the trolley and move it vertically on the crane
-    4) stores counterweight to balance the arm 
+    4) counterweight to balance the arm stored in kilograms
     5) lock system to keep the package on the trolley
 3 things it can do:
     1) pick up a package and move it vertically in the air
@@ -73,7 +73,7 @@ Thing 2) Elevator
     1) numbers of buttons according to each available floor
     2) numbers of locks to access to restricted floors
     3) number of maximum weight that can be lifted in the elevator
-    4) Stores prerecorded voice messages to indicate which floor we are currently in when the doors open
+    4) numbers of prerecorded voice messages to indicate which floor we are currently in
     5) Numbers of ramps on each wall for accessibility
 3 things it can do:
     1) Move the car vertically
@@ -84,7 +84,7 @@ Thing 2) Elevator
 /*
 Thing 3) Fishing boat
 5 properties:
-    1) stores fish captured every day
+    1) captured fish captured every day in kilograms
     2) numbers of beds for each member of the crew
     3) number of cranes to reel back in fishnets into the boat
     4) number of fishnets stored on the boat to use to capture fishes in the sea
@@ -99,7 +99,7 @@ Thing 3) Fishing boat
 Thing 4) helicopter
 5 properties:
     1) number of rotors to fly and stabilize the helicopter
-    2) stores fuel in the back of the cockpit for long distances
+    2) fuel stored in liters in the back of the cockpit for long distances
     3) number of doors to gain access to the cockpit of the passenger seats
     4) number of passenger seats for traveling people to places
     5) numbers of gauges to measure multiple informations for using the helicopter
