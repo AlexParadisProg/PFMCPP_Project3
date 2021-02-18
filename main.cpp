@@ -114,18 +114,18 @@ Thing 4) helicopter
  */
 
 /*
-Thing 10)
+Thing 10) Digital Motion Picture Camera
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) screen display
+    2) lens
+    3) storage
+    4) stabilizer
+    5) viewfinder
 3 things it can do:
-    1)
-    2)
-    3)
- */
+    1) record video
+    2) adjust screen lighting
+    3) output video feed
+*/
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
