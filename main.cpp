@@ -125,73 +125,73 @@ Thing 4) helicopter
  */
 
 /*
-Thing 5)
+Thing 5) Screen Display
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) frame per second (fps) (float)
+    2) percentage of batteries left (int)
+    3) number of last recorded clip (int)
+    4) number of shutter angle (float)
+    5) type of color being recorded (char)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) switch between other information on the screen
+    2) adjust parameters for each information
+    3) customize buttons for specific usage
  */
 
 /*
-Thing 6)
+Thing 6) Lens
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) weight of lens in kg
+    2) angle of view in degrees (float)
+    3) focal length in mm
+    4) aperture number (light exposure) (float)
+    5) type of lens mount (char)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) focus on the main character in the screen
+    2) zoom in and out while recording
+    3) adjust light exposure in the camera
  */
 
 /*
-Thing 7)
+Thing 7) Storage
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of video clips stored (int)
+    2) number of photographs stored (int)
+    3) percentage of space available (float)
+    4) remaining footage time that can be stored using the same framerate (in minutes)
+    5) number of available storage cards (int)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) stores recorded video footage
+    2) backup recorded footage on an external device
+    3) format the card to remove all data
  */
 
 /*
-Thing 8)
+Thing 8) Stabilizer
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of mechanical springs to absorb (int)
+    2) number of screws to adjust height (int)
+    3) height in cm
+    4) angle rotation (int)
+    5) weight plate to balance the camera (in lbs)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) rotate the camera horizontally
+    2) move angle of the camera remotely
+    3) Start recording remotely
  */
 
 /*
-Thing 9)
+Thing 9) Viewfinder
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) indicates if camera if it's standby or recording (bool)
+    2) number of the next clip that will be recorded (int)
+    3) remaining time available to record (float)
+    4) amounts of Exposuder Index (EI) (int)
+    5) status of monitors (char)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) change zoom positions
+    2) activate magnification function
+    3) flip the image horizontally
  */
 
 /*
