@@ -27,11 +27,11 @@ I recommend compiling after finishing each one and making sure it compiles
 without errors or warnings before moving on to writing the next UDT. 
 
 1) define an empty struct for each of your 10 types. i.e.:
-*/
+
 struct CarWash
 {
 
-};
+};*/
 /*
 2) Copy your 5 properties & 3 actions into the empty struct body.
     - comment them out.
@@ -128,6 +128,26 @@ Thing 1) Crane
     2) move the package horizontally in the air
     3) move the horizontal arm veritcally along the tower
  */
+struct Crane
+{
+    //packages to move stored on the trolley in kilograms
+    int packagesWeight = 10;
+    //number of seats in the cabin to operate the crane
+    int numSeats = 2;
+    //number of pulleys to hold the trolley and move it vertically on the crane
+    int numPulleys = 3;
+    //counterweight to balance the arm stored in kilograms
+    int counterweightBalance = 20;
+    //lock system to keep the package on the trolley
+    bool isTrolleyLocked = false;
+    
+    //pick up a package and move it vertically in the air
+    void movePackageVertical();
+    //move the package horizontally in the air
+    void movePackageHorizontal();
+    //move the horizontal arm veritcally along the tower
+    void moveArmHorizontal();
+};
 
 /*
 Thing 2) Elevator
@@ -142,6 +162,44 @@ Thing 2) Elevator
     2) Open/Close the car doors after moving the car vertically
     3) indicate which level we are in after the car stopped moving.
  */
+struct Elevator
+{
+    //numbers of buttons according to each available floor
+    int numButtons = 16;
+    //numbers of locks to access to restricted floors
+    int numLocks = 3;
+    //number of maximum weight that can be lifted in the elevator in Kilograms
+    float maxWeight = 80.5f;
+    //numbers of prerecorded voice messages to indicate which floor we are currently in
+    int numVoiceMessages = 20;
+    //Numbers of ramps on each wall for accessibility
+    int numRamps = 3;
+
+    struct RecordedMessage
+    {
+        //2) member variables with relevant data types.  the names are appropriate for the U.D.T.'s purpose.
+        float messageLength = 10.2f; // in Seconds
+        int messageLevelId = 5; 
+        std::string messageText = "5th Level";
+        float messageFileSize = 10.4f;
+        std::string dateRecorded = "14th March 2018";
+
+        //3) a member function whose parameter has a default value.
+        //the parameter name is related to the work the function will perform.
+        void recordNewMessage(std::string newFileName);
+        void setNewLevelId(int levelId);
+        void deleteRecordedMessage(int levelId);
+    };
+
+    //Move the car vertically
+    void moveCarVertical();
+    //Open/Close the car doors after moving the car )vertically
+    bool openCarDoor(bool isCarDoorOpen);
+    //indicate which level we are in after the car stopped moving.
+    int changeLevel(int numNewLevel);
+
+    RecordedMessage messageBeingPlayed;
+};
 
 /*
 Thing 3) Fishing boat
@@ -156,6 +214,26 @@ Thing 3) Fishing boat
     2) capture fish using fishnets attached to a crane
     3) stores fishes after every catch 
  */
+struct FishingBoat
+{
+    //captured fish captured every day in kilograms
+    float fishCaptured = 36.5f;
+    //numbers of beds for each member of the crew
+    int numBeds = 12;
+    //number of cranes to reel back in fishnets into the boat
+    int numCranes = 4;
+    //number of fishnets stored on the boat to use to capture fishes in the sea
+    int numFishnets = 4;
+    //number of life jackets for the crew's safety
+    int numLifeJackets = 16;
+
+    //moves around on the water
+    void moveBoatAround();
+    //capture fish using fishnets attached to a crane
+    void captureFish();
+    //stores fishes after every catch 
+    float storeCapturedFish();
+};
 
 /*
 Thing 4) helicopter
@@ -170,6 +248,26 @@ Thing 4) helicopter
     2) move around horizontally while keeping the same altitude
     3) transport people from point a to point b
  */
+struct Helicopter
+{
+    //number of rotors to fly and stabilize the helicopter
+    int numRotors = 2;
+    //fuel stored in liters in the back of the cockpit for long distances
+    float fuelStored = 22.5f;
+    //number of doors to gain access to the cockpit of the passenger seats
+    int numDoors = 4;
+    //number of passenger seats for traveling people to places
+    int numPassengers = 6;
+    //numbers of gauges to measure multiple informations for using the helicopter
+    int numGauges = 24;
+
+    //fly vertically while staying in position in midair
+    void moveHeliVertical();
+    //move around horizontally while keeping the same altitude
+    void moveHeliHorizontal();
+    //transport people from point a to point b
+    float transportToPointB(float posX, float posY);
+};
 
 /*
 Thing 5) Screen Display
@@ -184,6 +282,44 @@ Thing 5) Screen Display
     2) adjust parameters for each information
     3) customize buttons for specific usage
  */
+struct ScreenDisplay
+{
+    //frame per second (fps) (float)
+    float framePerSecond = 23.976f;
+    //percentage of batteries left (float)
+    float percentageBatteries = 95.85f;
+    //number of last recorded clip (int)
+    int numLastRecordedClip = 12;
+    //number of shutter angle (float)
+    float numShutterAngle = 10.5f;
+    //type of color being recorded (char)
+    std::string typeColor = "Red";
+
+    struct CustomButton
+    {
+        //2) member variables with relevant data types.  the names are appropriate for the U.D.T.'s purpose.
+        bool isActivated = false;
+        int customButtonId = 1;
+        std::string buttonCustomName = ""; 
+        int attachedComponentId = 0;
+        int menuOrder = 0;
+
+        //3) a member function whose parameter has a default value.
+        //the parameter name is related to the work the function will perform.
+        void setNewCustomName(std::string newName);
+        void changeMenuOrder(int newMenuOrder);
+        void attachNewComponent(int newComponentId);
+    };
+
+    //switch between other information on the screen
+    int switchScreenInformation(int switchDirection);
+    //adjust parameters for each information
+    void adjustInformationParameter(int numInformation);
+    //customize buttons for specific usage
+    void customizeButtons(int numCustomButton);
+
+    CustomButton buttonBeingUsed;
+};
 
 /*
 Thing 6) Lens
@@ -198,6 +334,26 @@ Thing 6) Lens
     2) zoom in and out while recording
     3) adjust light exposure in the camera
  */
+struct Lens
+{
+    //weight of lens in kg
+    float lensWeight = 5.4f;
+    //angle of view in degrees (float)
+    float viewAngle = 45.2f;
+    //focal length in mm
+    float focalLength = 12.2f;
+    //aperture number (light exposure) (float)
+    float apertureExposure = 2.8f;
+    //type of lens mount (char)
+    std::string typeLensMount = "bayonet";
+
+    //focus on the main character in the screen
+    void focusCamera(int numFocus);
+    //zoom in and out while recording
+    void zoomCamera(float focalLength);
+    //adjust light exposure in the camera
+    void adjustLightExposure(float apertureExposure);
+};
 
 /*
 Thing 7) Storage
@@ -212,6 +368,26 @@ Thing 7) Storage
     2) backup recorded footage on an external device
     3) format the card to remove all data
  */
+struct Storage
+{
+    //number of video clips stored (int)
+    int numVideoclips = 26;
+    //number of photographs stored (int)
+    int numPhotographs = 11;
+    //percentage of space available (float)
+    float percentageSpaceAvailable = 54.3f;
+    //remaining footage time that can be stored using the same framerate (in minutes)
+    int remainingFootage = 24;
+    //number of available storage cards (int)
+    int numStorageCards = 2;
+
+    //stores recorded video footage
+    void storesRecordedFootage(int storageCardId);
+    //backup recorded footage on an external device
+    void backupRecordedFootage(int externalCardId);
+    //format the card to remove all data
+    void formatCard(int storageCardId);
+};
 
 /*
 Thing 8) Stabilizer
@@ -221,11 +397,31 @@ Thing 8) Stabilizer
     3) height in cm
     4) angle rotation (int)
     5) weight plate to balance the camera (in lbs)
-3 things it can do:
+3 thViewfinderings it can do:
     1) rotate the camera horizontally
     2) move angle of the camera remotely
     3) Start recording remotely
  */
+struct Stabilizer
+{
+    //number of mechanical springs to absorb (int)
+    int numSprings = 4;
+    //number of screws to adjust height (int)
+    int numScrews = 2;
+    //height in cm
+    float height = 10.5f;
+    //angle rotation (float)
+    float angleRotation = 24.1f;
+    //weight plate to balance the camera (in lbs)
+    int weightBalance = 8;
+
+    //rotate the camera horizontally
+    void rotateCameraHorizontally(float horizontalAngle);
+    //move angle of the camera remotely
+    void moveCameraAngle(float angleRotation);
+    //Start recording remotely
+    void startRecording();
+};
 
 /*
 Thing 9) Viewfinder
@@ -240,6 +436,27 @@ Thing 9) Viewfinder
     2) activate magnification function
     3) flip the image horizontally
  */
+struct Viewfinder
+{
+    //indicates if camera if it's standby or recording (bool)
+    bool isRecording = false;
+    //number of the next clip that will be recorded (int)
+    int numNextClip = 10;
+    //remaining time available to record in minutes (float)
+    float remainingTime = 32.5f;
+    //amounts of Exposure Index (EI) (int)
+    int amountExposureIndex = 10;
+    //status of monitors (char)
+    std::string statusMonitor = "Standby";
+
+    //change zoom positions
+    void changeZoomPosition(float zoomPosition);
+    //activate magnification function
+    void activateMagnification();
+    //flip the image horizontally
+    void flipImageHorizontally();
+
+};
 
 /*
 Thing 10) Digital Motion Picture Camera
@@ -254,6 +471,26 @@ Thing 10) Digital Motion Picture Camera
     2) adjust screen lighting
     3) output video feed
 */
+struct DigitalMotionPictureCamera
+{
+    //screen display
+    ScreenDisplay screenDisplayBeingUsed;
+    //lens
+    Lens lensBeingUsed;
+    //storage
+    Storage storageCardsBeingUsed;
+    //stabilizer
+    Stabilizer stabilizerBeingUsed;
+    //viewfinder
+    Viewfinder viewfinderBeingUsed;
+
+    //record video
+    void recordVideo();
+    //adjust screen lighting
+    void adjustScreenLighting(float newLighting);
+    //output video feed
+    void outputVideoFeed(int externalSourceId);
+};
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
