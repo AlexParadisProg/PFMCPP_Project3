@@ -142,11 +142,11 @@ struct Crane
     bool isTrolleyLocked = false;
     
     //pick up a package and move it vertically in the air
-    void movePackageVertical();
+    void movePackageVertical(float verticalDistance);
     //move the package horizontally in the air
-    void movePackageHorizontal();
+    void movePackageHorizontal(float horizontalDistance);
     //move the horizontal arm veritcally along the tower
-    void moveArmHorizontal();
+    void moveArmHorizontal(float horizontalDistance, float packageWeight);
 };
 
 /*
@@ -230,7 +230,7 @@ struct FishingBoat
     //moves around on the water
     void moveBoatAround();
     //capture fish using fishnets attached to a crane
-    void captureFish();
+    float captureFish(int numNetsUsed);
     //stores fishes after every catch 
     float storeCapturedFish();
 };
@@ -262,9 +262,9 @@ struct Helicopter
     int numGauges = 24;
 
     //fly vertically while staying in position in midair
-    void moveHeliVertical();
+    void moveHelicopterVertical(float veritcalDistance);
     //move around horizontally while keeping the same altitude
-    void moveHeliHorizontal();
+    void moveHelicopterHorizontal(float horizontalDistance);
     //transport people from point a to point b
     float transportToPointB(float posX, float posY);
 };
@@ -382,9 +382,9 @@ struct Storage
     int numStorageCards = 2;
 
     //stores recorded video footage
-    void storesRecordedFootage(int storageCardId);
+    float storeRecordedFootage(int storageCardId, float recordedFootageLength);
     //backup recorded footage on an external device
-    void backupRecordedFootage(int externalCardId);
+    void backupRecordedFootage(int externalCardId, float recordedFootageLength);
     //format the card to remove all data
     void formatCard(int storageCardId);
 };
