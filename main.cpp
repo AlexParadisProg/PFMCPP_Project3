@@ -1,164 +1,69 @@
- /*
- Project 3 - Part 2 / 5
- Video: Chapter 2 Part 6
- Implementations tasks
- 
-Create a branch named Part2
-
- tasks
- 0) delete all of the plain english pseudo-code you added in Part1.
-   don't forget to remove the blank lines left behind after you remove your comments
-   - you should be left with only your UDTs.
-*/ 
-// example:
-// if you had something like this at the end of Part1e:
 /*
-Thing: Car Wash   
-    5 properties:
-        - number of vacuum cleaners
-        - number of eco-friendly cleaning supplies
-        - stores the amount of water used per week.
-        - stores amount of profit made per week
-        - number of cars serviced per day
-    3 things it can do:
-        - wash and wax car
-        - charge customer
-        - detail the car interior
+ Project 3 - Part 3 / 5
+ video: Chapter 2 - Part 8
+ Constructors tasks
+
+ Create a branch named Part3
+
+ On this new branch:
+
+ 0) if you opted to not fill in any of your member functions in part2, 
+    fill in ALL of your member functions
+    
+ 1) Add a constructor for each User-Defined-Type.
+ 
+ 2) amend some of your UDT's member functions to print out something interesting via std::cout
+ 
+ 3) Instantiate 1 or 2 instances of each of your user-defined types in the main() function
+
+ 4) call some of your UDT's amended member functions in main().
+ 
+ 5) add some std::cout statements in main() that print out your UDT's member variable values or values returned from your UDT member functions (if they return values)
+ 
+ After you finish defining each type/function:
+ click the [run] button.  Clear up any errors or warnings as best you can.
+ 
+ example:
  */
 
 #include <iostream>
-#include <string>
-namespace Part1eVersion 
+namespace Example 
 {
-struct CarWash        
+struct UDT  // my user defined type named 'UDT'
 {
-    //number of vacuum cleaners                     
-    int numVacuumCleaners = 3; 
-    //number of eco-friendly cleaning supplies      
-    int numEcoFriendlyCleaningSupplies = 20;     
-    //stores the amount of water used per week.     
-    float waterUsedPerWeek = 200.f;            
-    //stores amount of profit made per week         
-    float profitPerWeek = 495.95f;               
-    //number of cars serviced per day               
-    int numberOfCarsServiced = 10;               
-    
-    struct Car  
-    {
-        bool isAPickupTruck = false;
-        float gasMileage = 26.2f;        
-        int year = 1985;
-        std::string manufacturer = "Toyota";
-        std::string model = "Corolla";
-
-        void fillTank(double fuelAmountInGallons = 2.0);  
-        void breakDown(std::string failureType, bool requiresTow = false);
-        int getMilesTraveledAnnually(bool includeUberLyftTrips);
-    };
-
-    //wash and wax car
-    void washAndWaxCar( Car car ); 
-    //charge customer
-    float chargeCustomer(float discountPercentage);
-    //detail the car interior
-    void detailInterior( Car car );
-    
-    Car carBeingServiced;  
-};
-}
-
-//this is what I want to see after the code is cleaned up: 
-namespace Part2Version
-{
-struct CarWash        
-{
-    int numVacuumCleaners = 3; 
-    int numEcoFriendlyCleaningSupplies = 20;     
-    float waterUsedPerWeek = 200.f;            
-    float profitPerWeek = 495.95f;               
-    int numberOfCarsServiced = 10;               
-    
-    struct Car  
-    {
-        bool isAPickupTruck = false;
-        float gasMileage = 26.2f;        
-        int year = 1985;
-        std::string manufacturer = "Toyota";
-        std::string model = "Corolla";
-
-        void fillTank(double fuelAmountInGallons = 2.0);  
-        void breakDown(std::string failureType, bool requiresTow = false);
-        int getMilesTraveledAnnually(bool includeUberLyftTrips);
-    };
-
-    void washAndWaxCar( Car car ); 
-    float chargeCustomer(float discountPercentage);
-    void detailInterior( Car car );
-    
-    Car carBeingServiced;  
-};
-}
-  /*
-    The above snippet is just an example showing you how to clean up your code.  
-    Do not put your cleaned up code into a namespace like I have done here.
-
- 1) write the definition for the Type that leftFoot and rightFoot are instantiations of.
-    don't forget to define and implement the member functions 'stepForward()' and 'stepSize()'
-    you should be able to deduce the return type of those functions based on their usage in Person::run()
-    You'll need to insert the Person struct from the video in the space below.
- */
-struct Person
-{
-    int age;
-    int height;
-    float hairLength;
-    float GPA;
-    unsigned int SATScore;
-    int distanceTraveled;
-
-    struct Foot
-    {
-        int shoeSize = 11;    
-        int numberOfStepsDone = 0;
-        void stepForward()
-        {
-            numberOfStepsDone += 1;
-        }
-        int stepSize()
-        {
-            return shoeSize;
-        }
-    };
-
-    Foot leftFoot, rightFoot;
-
-    void run( bool startWithLeftFoot);
+    int a; //a member variable
+    UDT();              //1) the constructor
+    void printThing();  //the member function
 };
 
-void Person::run( bool startWithLeftFoot)
+//the function definitions are outside of the class
+UDT::UDT()
 {
-    if(startWithLeftFoot) 
-    {
-        leftFoot.stepForward();
-        rightFoot.stepForward();
-    }
-    else
-    {
-        rightFoot.stepForward();
-        leftFoot.stepForward();
-    }
-    distanceTraveled += leftFoot.stepSize() + rightFoot.stepSize();
+    a = 0;
 }
 
+void UDT::printThing()
+{
+    std::cout << "UDT::printThing() " << a << std::endl;  //2) printing out something interesting
+}
 
- /*
- 2) provide implementations for the member functions you declared in your 10 user-defined types from the previous video outside of your UDT definitions.
-    If you decide to write empty functions, you will need to fill them in with code in part 3.
- 
- 3) be sure to write the correct full qualified name for the nested type's member functions.
- 
- 4) After you finish defining each type/function, click the [run] button.  Clear up any errors or warnings as best you can.
- */
+int main()
+{
+    UDT foo;              //3) instantiating a UDT named 'foo' in main()
+    foo.printThing();     //4) calling a member function of the UDT instance.
+    
+    //5) a std::cout statement accessing foo's member variable.
+    //It also demonstrates a 'ternary expression', which is syntactic shorthand for an 'if/else' expression
+    std::cout << "Is foo's member var 'a' equal to 0? " << (foo.a == 0 ? "Yes" : "No") << "\n";
+    
+    return 0;
+}
+} //end namespace Example
+
+//insert Example::main() into main() of user's repo.
+
+
+
 
 
 struct Crane
@@ -176,17 +81,17 @@ struct Crane
 
 void Crane::movePackageVertical(float)
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
 }
 
 void Crane::movePackageHorizontal(float)
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
 }
 
 void Crane::moveArmHorizontal(float, float)
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
 }
 
 
@@ -220,29 +125,29 @@ struct Elevator
 
 void Elevator::moveCarVertical()
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
 }
 bool Elevator::openCarDoor(bool)
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
     return false;
 }
 int Elevator::changeLevel(int)
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
     return 0;
 }
 void Elevator::RecordedMessage::recordNewMessage(std::string)
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
 }
 void Elevator::RecordedMessage::setNewLevelId(int)
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
 }
 void Elevator::RecordedMessage::deleteRecordedMessage(int)
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
 }
 
 struct FishingBoat
@@ -260,16 +165,16 @@ struct FishingBoat
 
 void FishingBoat::moveBoatAround()
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
 }
 float FishingBoat::captureFish(int)
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
     return 0.1f;
 }
 float FishingBoat::storeCapturedFish()
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
     return 0.1f;
 }
 
@@ -288,15 +193,15 @@ struct Helicopter
 
 void Helicopter::moveHelicopterVertical(float)
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
 }
 void Helicopter::moveHelicopterHorizontal(float)
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
 }
 float Helicopter::transportToPointB(float, float)
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
     return 0.1f;
 }
 
@@ -330,28 +235,28 @@ struct ScreenDisplay
 
 int ScreenDisplay::switchScreenInformation(int)
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
     return 0;
 }
 void ScreenDisplay::adjustInformationParameter(int)
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
 }
 void ScreenDisplay::customizeButtons(int)
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
 }
 void ScreenDisplay::CustomButton::setNewCustomName(std::string)
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
 }
 void ScreenDisplay::CustomButton::changeMenuOrder(int)
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
 }
 void ScreenDisplay::CustomButton::attachNewComponent(int)
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
 }
 
 struct Lens
@@ -368,15 +273,15 @@ struct Lens
 };
 void Lens::focusCamera(int)
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
 }
 void Lens::zoomCamera(float)
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
 }
 void Lens::adjustLightExposure(float)
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
 }
 
 struct Storage
@@ -394,16 +299,16 @@ struct Storage
 
 float Storage::storeRecordedFootage(int, float)
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
     return 0.1f;
 }
 void Storage::backupRecordedFootage(int, float)
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
 }
 void Storage::formatCard(int)
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
 }
 
 struct Stabilizer
@@ -420,15 +325,15 @@ struct Stabilizer
 };
 void Stabilizer::rotateCameraHorizontally(float)
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
 }
 void Stabilizer::moveCameraAngle(float)
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
 }
 void Stabilizer::startRecording()
 {
-    //Will be filled in Project 3 - Part 3
+    FIXME//Will be filled in Project 3 - Part 3
 }
 
 struct Viewfinder
@@ -447,14 +352,17 @@ struct Viewfinder
 void Viewfinder::changeZoomPosition(float)
 {
     //Will be filled in Project 3 - Part 3
+    FIXME
 }
 void Viewfinder::activateMagnification()
 {
     //Will be filled in Project 3 - Part 3
+    FIXME
 }
 void Viewfinder::flipImageHorizontally()
 {
     //Will be filled in Project 3 - Part 3  
+    FIXME
 }
 
 struct DigitalMotionPictureCamera
@@ -473,14 +381,17 @@ struct DigitalMotionPictureCamera
 void DigitalMotionPictureCamera::recordVideo()
 {
     //Will be filled in Project 3 - Part 3
+    FIXME
 }
 void DigitalMotionPictureCamera::adjustScreenLighting(float)
 {
     //Will be filled in Project 3 - Part 3
+    FIXME
 }
 void DigitalMotionPictureCamera::outputVideoFeed(int)
 {
     //Will be filled in Project 3 - Part 3
+    FIXME
 }
 
 /*
@@ -500,5 +411,6 @@ void DigitalMotionPictureCamera::outputVideoFeed(int)
 #include <iostream>
 int main()
 {
+    Example::main();
     std::cout << "good to go!" << std::endl;
 }
